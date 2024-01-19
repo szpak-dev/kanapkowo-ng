@@ -6,6 +6,7 @@ import {UserMenuComponent} from "./users/user-menu.component";
 import {LoginFormComponent} from "./auth/login-form.component";
 import {User} from "./users/user.model";
 import {getStoredLoggedInUser} from "./auth/auth.service"
+import {UserService} from "./users/user.service";
 
 @Component({
   selector: 'app-root',
@@ -28,7 +29,7 @@ import {getStoredLoggedInUser} from "./auth/auth.service"
                   <user-menu/>
                   <ingredients-list/>
               } @else {
-                  <login-form (successfulLogin)="onLoginSuccess($event)"/>
+                  <login-form [timeForLogin]="15" (successfulLogin)="onLoginSuccess($event)"/>
               }
           </div>
       </div>

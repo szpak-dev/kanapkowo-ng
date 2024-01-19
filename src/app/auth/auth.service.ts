@@ -30,5 +30,5 @@ export function getStoredLoggedInUser(): User {
 
   // @ts-ignore
   const {id, username} = JSON.parse(serializedUser);
-  return new User(id, username, '');
+  return new User(id, username, '', false);
 }

@@ -22,6 +22,7 @@ import {User} from "../users/user.model";
   `
 })
 export class LoginFormComponent {
+  @Input() timeForLogin = 5
   @Output() successfulLogin = new EventEmitter<User>();
 
   credentials: Credentials = {

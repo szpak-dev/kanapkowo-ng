@@ -1,8 +1,9 @@
 import {User} from "./user.model";
+import {Injectable} from "@angular/core";
 
 const userDatabase = [
-  new User(1, 'user1', 'pass1'),
-  new User(2, 'user2', 'pass2'),
+  new User(1, 'user1', 'pass1', false),
+  new User(2, 'user2', 'pass2', false),
 ]
 
 export function getUser(username: string): User {
@@ -13,4 +14,9 @@ export function getUser(username: string): User {
   }
 
   return found[0];
+}
+
+@Injectable()
+export class UserService {
+
 }
